@@ -4,7 +4,7 @@
 # https://algs4.cs.princeton.edu/15uf/WeightedQuickUnionUF.java.html
 
 from abc import ABC, abstractmethod
-from .TicToc import TicToc
+from TicToc import TicToc
 
 
 class BaseQuickUnion(ABC):

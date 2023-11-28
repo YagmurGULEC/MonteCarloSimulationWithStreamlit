@@ -1,5 +1,17 @@
 import unittest
-from QuickUnion.QuickUnion import QuickUnion, WeightedQuickUnion, WeightedQuickUnionPathCompression, TicToc
+from QuickUnion import QuickUnion, WeightedQuickUnion, WeightedQuickUnionPathCompression, TicToc
+from Percolation import Percolation
+import stdio
+import sys
+
+
+test_dictionary = {
+    'test_data/percolation/input2-no.txt':
+    {'percolates': False,
+     'noOfOpenSites': 2,
+     'isFull': {'(1,1)': False}}
+
+}
 
 
 def time_func(func):
@@ -54,4 +66,5 @@ class TestQuickUnion(unittest.TestCase):
 
 
 if __name__ == '__main__':
+
     unittest.main()

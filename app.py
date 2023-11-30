@@ -4,7 +4,7 @@ import numpy as np
 from PercolationStats import PercolationStats
 import plot_utils
 import streamlit.components.v1 as components
-import json
+
 
 st.set_page_config(page_title='Monte Carlo Simulation', layout='wide')
 st.title(plot_utils.titles[1])
@@ -22,7 +22,7 @@ if "filename" not in st.session_state:
     new_filename()
 
 
-@st.cache_data
+@st.cache_data(ttl=3600)
 def run_new_simulation(nrows, ncols, trials):
     pstats = PercolationStats(nrows, ncols, trials)
     pstats.run_simulation()
@@ -60,7 +60,12 @@ nCols = st.number_input(
 nTrials = st.number_input(
     'Number of trials', min_value=30, step=10)
 add = st.button(label="Add simulation")
+clear = st.button(label="Clear cache")
+if clear:
+    st.cache_data.clear()
 if add:
+    if len(st.session_state.data) < 1:
+        st.cache_data.clear()
     run_new_simulation(nRows, nCols, nTrials)
     st.dataframe(st.session_state.data)
 

@@ -1,6 +1,7 @@
 [![Python demo workflow](https://github.com/YagmurGULEC/MonteCarloSimulationWithStreamlit/actions/workflows/main.yml/badge.svg)](https://github.com/YagmurGULEC/MonteCarloSimulationWithStreamlit/actions/workflows/main.yml)
 
 # Streamlit Application for Monte-Carlo Simulation To Estimate the Value of Percolation Threshold
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://percolationmontecarlo.streamlit.app/)
 
 This repository is created to submit MLH's Month Long Hackathon. I got the inspiration [from the Percolation assignment in Coursera's Algorithms 1 course from Princeton](https://coursera.cs.princeton.edu/algs4/assignments/percolation/specification.php).
 

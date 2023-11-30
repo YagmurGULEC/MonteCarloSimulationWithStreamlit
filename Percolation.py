@@ -4,6 +4,7 @@ import stdio
 import fileinput
 import sys
 
+
 test_dictionary = {
     'test_data/percolation/input2-no.txt':
     {'percolates': False,
@@ -14,7 +15,7 @@ test_dictionary = {
 
 
 class Percolation:
-    def __init__(self, nrows, ncols, method=None):
+    def __init__(self, nrows, ncols, method="WeightedQuickUnionPathCompression"):
         if (nrows < 1) or (ncols < 1):
             raise ValueError
 
@@ -42,6 +43,7 @@ class Percolation:
         if (self.isOpen[i][j] == 1):
             return
         self.isOpen[i][j] = 1
+
         self.noOfOpenSites += 1
         # find top, left, right and bottom neigbors
         for dx in [-1, 0, 1]:

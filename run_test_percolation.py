@@ -88,9 +88,16 @@ def test_run_percolation(test_file):
             n, n, method="WeightedQuickUnionPathCompression")
         while True:
             line = f.readline()
+            l = []
             if not line:
                 break
-            l = [int(i) for i in line.strip("\n").split(" ")]
+            for i in line.split(" "):
+                try:
+                    int(i)
+                    l.append(int(i))
+                except:
+                    pass
+
             percolation.open(l[0], l[1])
         return percolation
 
